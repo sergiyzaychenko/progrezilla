@@ -11,65 +11,62 @@ import java.awt.event.ActionListener;
  */
 public class Application extends JFrame {
 
-    public static void main(String[] args) {
+
+    private final JPanel topPanel = new JPanel();
+
+    private final JButton exitButton = new JButton("Exit");
+
+    private final JButton addButton = new JButton("+");
+
+    private void composeLayout() {
 
 
-        Application frame = new Application();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 400);
 
-        frame.setSize(600, 400);
+        setLayout(new BorderLayout());
 
-        frame.setLayout(new BorderLayout());
+        exitButton.setSize(100, 100);
 
-        JTextArea textArea = new JTextArea();
-
-        JPanel topPanel = new JPanel();
-
-        JButton button = new JButton("Exit");
-
-        button.setSize(100, 100);
-
-        button.addActionListener(e -> {
+        exitButton.addActionListener(e -> {
 
             System.exit(0);
 
         });
 
-        topPanel.add(button);
+        topPanel.add(exitButton);
 
-        JButton title = new JButton("Title");
+        addButton.setSize(100, 100);
 
-        title.setSize(100, 100);
+        addButton.addActionListener(e -> {
 
-        title.addActionListener(e -> {
-
-            frame.setTitle("Program");
 
         });
 
-        topPanel.add(title);
+        topPanel.add(addButton);
 
-        JButton println = new JButton("Println");
+        getContentPane().add(topPanel, BorderLayout.NORTH);
 
-        println.setSize(100, 100);
+    }
 
-        println.addActionListener(e -> {
+    public Application() {
 
-            System.out.println("Yes");
+        super();
 
-        });
+        composeLayout();
 
-        topPanel.add(println);
+    }
 
-        frame.getContentPane().add(topPanel, BorderLayout.NORTH);
+    public static void main(String[] args) {
 
-        JScrollPane scrollPane = new JScrollPane(textArea);
-
-        frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        Application frame = new Application();
 
         frame.setVisible(true);
 
     }
 
 }
+
+
+
