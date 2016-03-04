@@ -20,6 +20,7 @@ public class ActivityController {
 
     }
 
+    //1
     void updateActivity(Date lastActivityDate, int lastScore) {
 
 
