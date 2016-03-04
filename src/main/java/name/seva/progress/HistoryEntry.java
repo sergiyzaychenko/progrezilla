@@ -1,5 +1,6 @@
 package name.seva.progress;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -9,12 +10,12 @@ import java.util.Date;
 public class HistoryEntry {
 
 
-    private final Date entryDate;
+    private final LocalDate entryDate;
 
     private final int entryResult;
 
 
-    public HistoryEntry(Date entryDate, int entryResult) {
+    public HistoryEntry(LocalDate entryDate, int entryResult) {
 
         this.entryDate = entryDate;
 
@@ -22,7 +23,7 @@ public class HistoryEntry {
 
     }
 
-    public Date getEntryDate() {
+    public LocalDate getEntryDate() {
 
         return entryDate;
 

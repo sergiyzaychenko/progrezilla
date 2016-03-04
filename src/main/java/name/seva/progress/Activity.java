@@ -1,5 +1,6 @@
 package name.seva.progress;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.Date;
@@ -16,13 +17,14 @@ public class Activity {
 
     private final String name;
 
-    private final Date startDate;
+    private final LocalDate startDate;
 
-    private final Date lastActivityDate;
+    private final LocalDate lastActivityDate;
 
     private final int lastScore;
 
-    public Activity(Date lastActivityDate, String name, Date startDate, int lastScore) {
+
+    public Activity(LocalDate lastActivityDate, String name, LocalDate startDate, int lastScore) {
 
         this.lastActivityDate = lastActivityDate;
 
@@ -34,27 +36,38 @@ public class Activity {
 
     }
 
+
+
     public List<HistoryEntry> getHistory() {
+
         return history;
+
     }
 
-    public Date getLastActivityDate() {
+    public LocalDate getLastActivityDate() {
+
         return lastActivityDate;
+
     }
 
     public int getLastScore() {
+
         return lastScore;
+
     }
 
     public String getName() {
+
         return name;
+
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
 
         return startDate;
 
     }
-    //Hello
+
+
 }
 
